@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Friend Finder - Survey</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
+        crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery.js"></script>
+</head>
+
+<body>
+
+    <div class="container" id="main_box">
+        <form>
+            <div class="form-group">
+                <label for="nameInput">Name (Required)</label>
+                <input type="name" class="form-control" id="nameInput" placeholder="Name">
+                <label for="imageInput">Image (Required)</label>
+                <input type="url" class="form-control" id="imageInput" placeholder="Put url here">
+                <h3>For this survey, 1 is Strongly Disagree and 5 is Strongly Agree</h3>
+                <label for="question1">Question 1: Your mind is always buzzing with unexplored ideas and plans.</label>
+                <select class="form-control" id="question1">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                </select>
+                <label for="question2">Question 2: Generally speaking, you rely more on your experience than your imagination.</label>
+                <select class="form-control" id="question2">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                </select>
+                <label for="question3">Question 3: You find it easy to stay relaxed and focused even when there is some pressure.</label>
+                <select class="form-control" id="question3">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                </select>
+                <label for="question4">Question 4: You rarely do something just out of sheer curiosity.</label>
+                <select class="form-control" id="question4">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                </select>
+                <label for="question5">Question 5: People can rarely upset you.</label>
+                <select class="form-control" id="question5">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                </select>
+                <label for="question6">Question 6: It is often difficult for you to relate to other people’s feelings.</label>
+                <select class="form-control" id="question6">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                </select>
+                <label for="question7">Question 7: In a discussion, truth should be more important than people’s sensitivities.</label>
+                <select class="form-control" id="question7">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                </select>
+                <label for="question8">Question 8: You rarely get carried away by fantasies and ideas.</label>
+                <select class="form-control" id="question8">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                </select>
+                <label for="question9">Question 9: You think that everyone’s views should be respected regardless of whether
+                    they are supported by facts or not.</label>
+                <select class="form-control" id="question9">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                </select>
+                <label for="question10">Question 10: You feel more energetic after spending time with a group of people.</label>
+                <select class="form-control" id="question10">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                </select>
+                <button type="submit" class="btn btn-primary submit" style="margin: 10px 0px 0px 0px">Submit</button>
+            </div>
+        </form>
+    </div>
+
+</body>
+
+</html>
+
+<script type="text/javascript">
+
+    //on-click event
+    $(".submit").on("click", function (event) {
+        event.preventDefault();
+
+        var newSubmission = {
+            name: $("#nameInput").val().trim(),
+            image: $("#imageInput").val().trim(),
+            question1: $("#question1").val().trim(),
+            question2: $("#question2").val().trim(),
+            question3: $("#question3").val().trim(),
+            question4: $("#question4").val().trim(),
+            question5: $("#question5").val().trim(),
+            question6: $("#question6").val().trim(),
+            question7: $("#question7").val().trim(),
+            question8: $("#question8").val().trim(),
+            question9: $("#question9").val().trim(),
+            question10: $("#question10").val().trim(),
+        };
+
+        console.log(newSubmission);
+
+        $.post("/api/friends", newSubmission,
+            function (data) {
+
+                //post alert
+                alert("Your answers have been submitted.");
+
+                // Clear the form
+                $("#nameInput").val("");
+                $("#imageInput").val("");
+                $("#question1").val("");
+                $("#question2").val("");
+                $("#question3").val("");
+                $("#question4").val("");
+                $("#question5").val("");
+                $("#question6").val("");
+                $("#question7").val("");
+                $("#question8").val("");
+                $("#question9").val("");
+                $("#question10").val("");
+
+            });
+
+    });
+
+</script>
