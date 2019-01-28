@@ -14,8 +14,11 @@
   "author": "Austin Hickox",
   "license": "ISC",
   "dependencies": {
+    "body-parser": "^1.15.0",
     "express": "^4.16.4",
     "path": "^0.12.7"
+  },
+  "engines": {
+    "node": "5.3.0"
   }
-  
 }

@@ -1,22 +1,105 @@
-//posted potential friends array, starting with a dummy account from the HW instructions
+//posted potential friends array
 
-var friendsArray = [
-    {
-        "name":"Ahmed",
-        "photo":"https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/064/1bd/3435aa3.jpg",
-        "question1": 5,
-        "question2": 1,
-        "question3": 4,
-        "question4": 4,
-        "question5": 5,
-        "question6": 1,
-        "question7": 2,
-        "question8": 5,
-        "question9": 4,
-        "question10": 1,
-      }
-        ];
+var friends = [
+  {
+    name: "Aaron Riker",
+    photo: "https://openclipart.org/download/275133/persongeneric.svg",
+    scores: [
+      "5",
+      "1",
+      "4",
+      "4",
+      "5",
+      "1",
+      "2",
+      "5",
+      "4",
+      "1"
+    ]
+  },
+  {
+    name: "Vito Francia",
+    photo: "https://openclipart.org/download/275133/persongeneric.svg",
+    scores: [
+      "4",
+      "2",
+      "5",
+      "1",
+      "3",
+      "2",
+      "2",
+      "1",
+      "3",
+      "2"
+    ]
+  },
+  {
+    name: "Grant Giammarva",
+    photo: "https://openclipart.org/download/275133/persongeneric.svg",
+    scores: [
+      "5",
+      "2",
+      "2",
+      "2",
+      "4",
+      "1",
+      "3",
+      "2",
+      "5",
+      "5"
+    ]
+  },
+  {
+    name: "Devyn Hickox",
+    photo: "https://openclipart.org/download/275133/persongeneric.svg",
+    scores: [
+      "3",
+      "3",
+      "4",
+      "2",
+      "2",
+      "1",
+      "3",
+      "2",
+      "2",
+      "3"
+    ]
+  },
+  {
+    name: "Paul Maskowitz",
+    photo: "https://openclipart.org/download/275133/persongeneric.svg",
+    scores: [
+      "4",
+      "3",
+      "4",
+      "1",
+      "5",
+      "2",
+      "5",
+      "3",
+      "1",
+      "4"
+    ]
+  },
+  {
+    name: "Kat Yan",
+    photo: "https://openclipart.org/download/275133/persongeneric.svg",
+    scores: [
+      "4",
+      "4",
+      "2",
+      "3",
+      "2",
+      "2",
+      "3",
+      "2",
+      "4",
+      "5"
+    ]
+  }
+
+];
   
   // makes apiRoutes.js able to access this file
-  module.exports = friendsArray;
+  module.exports = friends;
   

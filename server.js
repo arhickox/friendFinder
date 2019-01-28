@@ -1,19 +1,18 @@
-//Requires
+//requires
 var express = require("express");
 var bodyParser = require("body-parser");
 
+//listener
 var app = express();
-
-var PORT = process.env.PORT || 3000;
+var PORT = process.env.PORT || 8080;
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-//Routes linking to apiRoutes.js and htmlRoutes.js
+//router
 require("./app/routing/apiRoutes")(app);
 require("./app/routing/htmlRoutes")(app);
 
-//Start Server
-app.listen(PORT, function () {
+app.listen(PORT, function() {
   console.log("App listening on PORT: " + PORT);
 });
